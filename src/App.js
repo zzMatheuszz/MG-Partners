@@ -186,76 +186,76 @@ const App = () => {
   }
 
   return (
-    // IMPORTANTE: Para que as fontes 'Playfair Display' e 'Inter', e o Framer Motion sejam carregados
-    // corretamente, você DEVE adicionar as seguintes linhas na seção <head> do seu arquivo HTML principal:
+    // IMPORTANT: For 'Playfair Display' and 'Inter' fonts, and Framer Motion to load
+    // correctly, you MUST add the following lines in the <head> section of your main HTML file:
     // <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     // <script src="https://unpkg.com/framer-motion@latest/dist/framer-motion.umd.js"></script>
     <div className="min-h-screen bg-[#0D0D0D] font-inter leading-normal text-[#EAEAEA]">
-      {/* Estilos CSS globais para scroll suave e efeitos de hover */}
+      {/* Global CSS styles for smooth scroll and hover effects */}
       <style>
         {`
           html {
-            scroll-behavior: smooth; /* Habilita o scroll suave para âncoras */
+            scroll-behavior: smooth; /* Enables smooth scroll for anchors */
           }
-          /* Estilo para o sublinhado animado nos links de navegação */
+          /* Style for animated underline on navigation links */
           .nav-link::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 2px;
-            background: #f1c40f; /* Dourado mais vibrante para hover */
+            background: #f1c40f; /* More vibrant gold for hover */
             left: 0;
             bottom: -6px;
-            transform: scaleX(0); /* Começa invisível */
+            transform: scaleX(0); /* Starts invisible */
             transform-origin: left;
-            transition: transform 0.3s ease; /* Transição suave */
+            transition: transform 0.3s ease; /* Smooth transition */
           }
           .nav-link:hover::after,
           .nav-link.active::after {
-            transform: scaleX(1); /* Expande no hover e quando ativo */
+            transform: scaleX(1); /* Expands on hover and when active */
           }
-          /* Efeito de brilho no logo ao passar o mouse */
+          /* Glow effect on logo on hover */
           .logo-hover-effect:hover {
-            filter: drop-shadow(0 0 5px #c7a938); /* Adiciona um brilho dourado mais suave */
+            filter: drop-shadow(0 0 5px #c7a938); /* Adds a softer golden glow */
           }
-          /* Sombra translúcida na navbar */
+          /* Translucent shadow on navbar */
           .navbar-shadow {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Sombra mais pronunciada */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* More pronounced shadow */
           }
         `}
       </style>
 
-      {/* Cabeçalho da Landing Page */}
+      {/* Landing Page Header */}
       <motion.header
-        initial={{ opacity: 0, y: -50 }} // Começa invisível e acima
-        animate={{ opacity: 1, y: 0 }} // Desliza para a posição final
-        transition={{ duration: 0.8, ease: "easeOut" }} // Animação suave
-        className="bg-[#0D0D0D] py-6 px-6 md:px-12 border-b border-[#1A1A1A] navbar-shadow fixed w-full top-0 z-40" // Navbar fixa no topo com sombra
+        initial={{ opacity: 0, y: -50 }} // Starts invisible and above
+        animate={{ opacity: 1, y: 0 }} // Slides to final position
+        transition={{ duration: 0.8, ease: "easeOut" }} // Smooth animation
+        className="bg-[#0D0D0D] py-6 px-6 md:px-12 border-b border-[#1A1A1A] navbar-shadow fixed w-full top-0 z-40" // Fixed navbar at the top with shadow
       >
         <nav className="container max-w-6xl mx-auto flex items-center justify-between">
-          {/* Logo "MG Partners" - Alinhado à esquerda */}
+          {/* "MG Partners" Logo - Left aligned */}
           <motion.a
             href="#"
             className="font-playfair-display leading-tight cursor-default user-select-none logo-hover-effect flex-shrink-0"
-            style={{ color: '#c7a938', fontSize: '1.15rem', letterSpacing: '-0.5px', fontWeight: '700' }} // Estilos inline para precisão
-            whileHover={{ filter: 'drop-shadow(0 0 8px #c7a938)' }} // Animação de brilho no hover
+            style={{ color: '#c7a938', fontSize: '1.15rem', letterSpacing: '-0.5px', fontWeight: '700' }} // Inline styles for precision
+            whileHover={{ filter: 'drop-shadow(0 0 8px #c7a938)' }} // Glow animation on hover
             transition={{ duration: 0.3 }}
           >
             <div>MG</div>
-            <div className="mt-[-0.2rem] font-normal">Partners</div> {/* Controla o espaçamento vertical, Partners com font-normal */}
+            <div className="mt-[-0.2rem] font-normal">Partners</div> {/* Controls vertical spacing, Partners com font-normal */}
           </motion.a>
 
-          {/* Navegação Desktop */}
-          {/* ml-auto empurra o menu para a direita, gap-8 para espaçamento */}
+          {/* Desktop Navigation */}
+          {/* ml-auto pushes the menu to the right, gap-8 for spacing */}
           <ul className="hidden md:flex gap-8 items-center ml-auto">
             <li><a href="#servicos" className="text-[#e0e0e0] font-normal hover:text-[#f1c40f] transition-all duration-300 ease-in-out rounded-md p-2 relative nav-link cursor-pointer" style={{ fontSize: '0.95rem' }}>Meus Serviços</a></li>
             <li className="flex items-center text-[#e0e0e0] font-normal hover:text-[#f1c40f] transition-all duration-300 ease-in-out rounded-md p-2 relative nav-link cursor-pointer" style={{ fontSize: '0.95rem' }}>
               <a href="#gerador-slogan">Gerador de Slogans</a>
-              <SparkleIcon /> {/* Ícone SVG */}
+              <SparkleIcon /> {/* SVG Icon */}
             </li>
             <li className="flex items-center text-[#e0e0e0] font-normal hover:text-[#f1c40f] transition-all duration-300 ease-in-out rounded-md p-2 relative nav-link cursor-pointer" style={{ fontSize: '0.95rem' }}>
               <a href="#gerador-anuncios">Gerador de Anúncios</a>
-              <SparkleIcon /> {/* Ícone SVG */}
+              <SparkleIcon /> {/* SVG Icon */}
             </li>
             <li><a href="#resultados" className="text-[#e0e0e0] font-normal hover:text-[#f1c40f] transition-all duration-300 ease-in-out rounded-md p-2 relative nav-link cursor-pointer" style={{ fontSize: '0.95rem' }}>Meus Resultados</a></li>
             <li><a href="#contato" className="text-[#e0e0e0] font-normal hover:text-[#f1c40f] transition-all duration-300 ease-in-out rounded-md p-2 relative nav-link cursor-pointer" style={{ fontSize: '0.95rem' }}>Fale Comigo</a></li>
@@ -434,35 +434,195 @@ const App = () => {
       {/* Divisor após o Gerador de Anúncios */}
       <div className="container max-w-4xl mx-auto my-16 border-t border-[#1A1A1A]"></div>
 
-      {/* Seção de Depoimentos/Resultados */}
-      <section id="resultados" className="py-24 px-6 md:px-12 bg-[#0D0D0D] text-[#EAEAEA] rounded-t-[2rem] shadow-lg"> {/* Fundo preto e texto claro */}
+      {/* Slogan Generator Section */}
+      <section id="gerador-slogan" className="py-24 px-6 md:px-12 bg-[#0D0D0D]">
         <div className="container max-w-6xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl font-semibold mb-12 rounded-md p-2 font-playfair-display text-[#EAEAEA]" // Título em branco
+            className="text-3xl md:text-4xl font-semibold text-[#EAEAEA] mb-8 rounded-md p-2 font-playfair-display"
           >
-            MG Partners: O Legado do Crescimento
+            Gerador de Slogans <SparkleIcon />
           </motion.h2>
-          {/* Bloco de conteúdo com estilo refinado */}
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-lg leading-relaxed text-[#B0B0B0] mb-10 rounded-md p-2"
+          >
+            Crie slogans impactantes para o seu produto ou serviço em segundos.
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="p-12 rounded-xl shadow-lg border-l-4 border-[#b99b2e] mx-auto max-w-3xl text-center md:text-left" // Padding, borda dourada, max-width, centralização e alinhamento
+            className="bg-[#1A1A1A] p-8 rounded-[2rem] shadow-lg max-w-2xl mx-auto"
+          >
+            <textarea
+              className="w-full p-4 rounded-lg bg-[#0D0D0D] text-[#EAEAEA] border border-[#333333] focus:border-[#D4AF37] focus:ring focus:ring-[#D4AF37] focus:ring-opacity-50 outline-none resize-y min-h-[120px] mb-6"
+              placeholder="Descreva seu produto ou serviço (ex: 'Uma cafeteria aconchegante com grãos especiais e ambiente para trabalho remoto.')"
+              value={productDescription}
+              onChange={(e) => setProductDescription(e.target.value)}
+            ></textarea>
+            <motion.button // Changed to motion.button
+              onClick={generateSlogan}
+              disabled={isLoadingSlogan}
+              className="w-full inline-block text-[#0D0D0D] px-8 py-3 rounded-full font-bold uppercase tracking-wider shadow-lg focus:ring-4 focus:ring-[#D4AF37] focus:ring-opacity-50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{ background: 'linear-gradient(135deg, #bfa342 0%, #d4af37 100%)' }}
+              whileHover={{ scale: 1.02, filter: 'brightness(1.1)' }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {isLoadingSlogan ? 'Gerando...' : 'Gerar Slogan'}
+            </motion.button>
+
+            {sloganError && (
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-red-500 mt-4 text-sm"
+              >
+                {sloganError}
+              </motion.p>
+            )}
+
+            {generatedSlogan && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="mt-6 p-4 bg-[#0D0D0D] rounded-lg border border-[#333333] text-left"
+              >
+                <h3 className="text-xl font-semibold text-[#D4AF37] mb-3">Slogans Sugeridos:</h3>
+                <p className="text-[#EAEAEA] whitespace-pre-line">{generatedSlogan}</p>
+              </motion.div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider after Slogan Generator */}
+      <div className="container max-w-4xl mx-auto my-16 border-t border-[#1A1A1A]"></div>
+
+      {/* Ad Copy Generator Section */}
+      <section id="gerador-anuncios" className="py-24 px-6 md:px-12 bg-[#0D0D0D]">
+        <div className="container max-w-6xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-4xl font-semibold text-[#EAEAEA] mb-8 rounded-md p-2 font-playfair-display"
+          >
+            Gerador de Anúncios <SparkleIcon />
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-lg leading-relaxed text-[#B0B0B0] mb-10 rounded-md p-2"
+          >
+            Crie textos de anúncios persuasivos e otimizados para atrair seu público-alvo.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-[#1A1A1A] p-8 rounded-[2rem] shadow-lg max-w-2xl mx-auto"
+          >
+            <input
+              type="text"
+              className="w-full p-4 rounded-lg bg-[#0D0D0D] text-[#EAEAEA] border border-[#333333] focus:border-[#D4AF37] focus:ring focus:ring-[#D4AF37] focus:ring-opacity-50 outline-none mb-4"
+              placeholder="Produto/Serviço (ex: 'Curso de Marketing Digital para Iniciantes')"
+              value={adProduct}
+              onChange={(e) => setAdProduct(e.target.value)}
+            />
+            <input
+              type="text"
+              className="w-full p-4 rounded-lg bg-[#0D0D0D] text-[#EAEAEA] border border-[#333333] focus:border-[#D4AF37] focus:ring focus:ring-[#D4AF37] focus:ring-opacity-50 outline-none mb-4"
+              placeholder="Público-alvo (ex: 'Pequenos empresários e autônomos')"
+              value={adAudience}
+              onChange={(e) => setAdAudience(e.target.value)}
+            />
+            <textarea
+              className="w-full p-4 rounded-lg bg-[#0D0D0D] text-[#EAEAEA] border border-[#333333] focus:border-[#D4AF37] focus:ring focus:ring-[#D4AF37] focus:ring-opacity-50 outline-none resize-y min-h-[100px] mb-6"
+              placeholder="Principal Benefício (ex: 'Aprenda a atrair clientes e aumentar seu faturamento com estratégias comprovadas.')"
+              value={adBenefit}
+              onChange={(e) => setAdBenefit(e.target.value)}
+            ></textarea>
+            <motion.button // Changed to motion.button
+              onClick={generateAdCopy}
+              disabled={isLoadingAdCopy}
+              className="w-full inline-block text-[#0D0D0D] px-8 py-3 rounded-full font-bold uppercase tracking-wider shadow-lg focus:ring-4 focus:ring-[#D4AF37] focus:ring-opacity-50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{ background: 'linear-gradient(135deg, #bfa342 0%, #d4af37 100%)' }}
+              whileHover={{ scale: 1.02, filter: 'brightness(1.1)' }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {isLoadingAdCopy ? 'Gerando...' : 'Gerar Texto de Anúncio'}
+            </motion.button>
+
+            {adCopyError && (
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-red-500 mt-4 text-sm"
+              >
+                {adCopyError}
+              </motion.p>
+            )}
+
+            {generatedAdCopy && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="mt-6 p-4 bg-[#0D0D0D] rounded-lg border border-[#333333] text-left"
+              >
+                <h3 className="text-xl font-semibold text-[#D4AF37] mb-3">Textos de Anúncio Sugeridos:</h3>
+                <p className="text-[#EAEAEA] whitespace-pre-line">{generatedAdCopy}</p>
+              </motion.div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider after Ad Copy Generator */}
+      <div className="container max-w-4xl mx-auto my-16 border-t border-[#1A1A1A]"></div>
+
+      {/* Testimonials/Results Section */}
+      <section id="resultados" className="py-24 px-6 md:px-12 bg-[#0D0D0D] text-[#EAEAEA] rounded-t-[2rem] shadow-lg"> {/* Black background and light text */}
+        <div className="container max-w-6xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-4xl font-semibold mb-12 rounded-md p-2 font-playfair-display text-[#EAEAEA]" // White title
+          >
+            MG Partners: O Legado do Crescimento
+          </motion.h2>
+          {/* Content block with refined style */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="p-12 rounded-xl shadow-lg border-l-4 border-[#b99b2e] mx-auto max-w-3xl text-center md:text-left" // Padding, golden border, max-width, centering and alignment
             style={{
-              backgroundColor: '#f2f2f2', // Fundo cinza muito claro
-              boxShadow: '0px 4px 20px rgba(0,0,0,0.05)' // Sombra personalizada
+              backgroundColor: '#f2f2f2', // Very light gray background
+              boxShadow: '0px 4px 20px rgba(0,0,0,0.05)' // Custom shadow
             }}
           >
-            {/* Título interno do bloco */}
+            {/* Internal block title */}
             <p className="font-bold text-[#111111] mb-4 mx-auto max-w-xl md:mx-0" style={{ fontSize: '1.4rem' }}>
               Traduzimos aspirações em conquistas reais.
             </p>
-            {/* Desenvolvimento do texto */}
+            {/* Text development */}
             <p className="font-normal text-[#333333] mb-8 mx-auto max-w-xl md:mx-0" style={{ fontSize: '1.05rem', lineHeight: '1.75' }}>
               Planejamos estratégias digitais que aumentam sua visibilidade,
               <br />
@@ -476,10 +636,10 @@ const App = () => {
         </div>
       </section>
 
-      {/* Divisor após a Seção de Depoimentos */}
+      {/* Divider after Testimonials Section */}
       <div className="container max-w-4xl mx-auto my-16 border-t border-[#1A1A1A]"></div>
 
-      {/* Seção de Call to Action Final */}
+      {/* Final Call to Action Section */}
       <section id="contato" className="py-24 px-6 md:px-12 text-center bg-[#0D0D0D]">
         <div className="container max-w-6xl mx-auto">
           <motion.h2
