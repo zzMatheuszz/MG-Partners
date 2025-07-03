@@ -682,9 +682,9 @@ const App = () => {
         <div className="container max-w-6xl mx-auto">
           <p className="text-sm">&copy; {new Date().getFullYear()} MG Partners. Todos os direitos reservados.</p>
           <div className="mt-4 text-sm space-x-4"> {/* Adicionado espaço entre os links */}
-            <a href="#" className="text-[#B0B0B0] hover:text-[#D4AF37] transition-all duration-300 ease-in-out">Política de Privacidade</a>
+            <a href="/politica-de-privacidade" className="text-[#B0B0B0] hover:text-[#D4AF37] transition-all duration-300 ease-in-out">Política de Privacidade</a>
             <span className="text-[#B0B0B0]">|</span>
-            <a href="#" className="text-[#B0B0B0] hover:text-[#D4AF37] transition-all duration-300 ease-in-out">Termos de Serviço</a>
+            <a href="/termos-de-servico" className="text-[#B0B0B0] hover:text-[#D4AF37] transition-all duration-300 ease-in-out">Termos de Serviço</a>
           </div>
         </div>
       </footer>
